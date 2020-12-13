@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include<string>
 using namespace std;
-void check(string str1)
+bool check(string str1)
 {
     stack<char> s;
     for(int i=0;i<str1.length();i++)
@@ -10,6 +10,8 @@ void check(string str1)
             s.push(str1[i]);
         else
         {
+            if(s.top() == true)
+                return false;
             if(s.top()=='{' && str1[i]=='}')
                 s.pop();
             else if(s.top()=='(' && str1[i]==')')
@@ -22,11 +24,11 @@ void check(string str1)
     }
 if(s.empty()==true)
 {
-    cout<<"balanced"<<endl;
+    return true;
 }
 else
 {
-     cout<<"not balanced"<<endl;
+     return false;
 }
 }
 int main()
@@ -37,7 +39,8 @@ int main()
     while(n)
     {
         cin>>str;
-        check(str);
+        bool b= check(str);
+        cout<<b;
         n--;
     }
    
