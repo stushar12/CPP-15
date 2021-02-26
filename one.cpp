@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include<string>
 using namespace std;
 bool check(string str1)
 {
@@ -10,7 +9,7 @@ bool check(string str1)
             s.push(str1[i]);
         else
         {
-            if(s.top() == true)
+            if(s.empty() == true)
                 return false;
             if(s.top()=='{' && str1[i]=='}')
                 s.pop();
