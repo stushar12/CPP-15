@@ -1,5 +1,5 @@
 # CPP-15
-Balanced Paranthesis
+Balanced Parenthesis
 
 
 
